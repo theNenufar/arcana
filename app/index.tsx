@@ -1,15 +1,22 @@
-import { Text, View } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function Index() {
-  return (
-    <View
-      style={{
+export default function Home() {
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>🔮 Arcana</Text>
+            <Text>Seu guia de tarot</Text>
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
-}
+        alignItems: "center"
+    },
+    title: {
+        fontSize: 28,
+        fontWeight: "bold"
+    }
+});
