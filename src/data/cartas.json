@@ -1,12 +1,470 @@
 [
   {
+    "id": 0,
+    "name": "O Louco",
+    "keywords": "começo, liberdade, risco, espontaneidade",
+    "description": "Você não precisa saber tudo, só precisa começar."
+  },
+  {
     "id": 1,
-    "nome": "O Louco",
-    "descricao": "Novos começos, liberdade, espontaneidade"
+    "name": "O Mago",
+    "keywords": "ação, habilidade, manifestação, foco",
+    "description": "Você já tem tudo, agora é colocar em prática."
   },
   {
     "id": 2,
-    "nome": "O Mago",
-    "descricao": "Habilidade, poder de ação, criatividade"
+    "name": "A Sacerdotisa",
+    "keywords": "intuição, silêncio, mistério, interior",
+    "description": "A resposta já está dentro, só precisa ouvir."
+  },
+  {
+    "id": 3,
+    "name": "A Imperatriz",
+    "keywords": "criação, cuidado, abundância, crescimento",
+    "description": "Cuide bem disso, porque tem potencial pra crescer."
+  },
+  {
+    "id": 4,
+    "name": "O Imperador",
+    "keywords": "estrutura, controle, liderança, estabilidade",
+    "description": "Assuma o controle e organize o que é seu."
+  },
+  {
+    "id": 5,
+    "name": "O Hierofante",
+    "keywords": "tradição, ensino, regras, espiritualidade",
+    "description": "Siga um caminho seguro ou aprenda com quem já sabe."
+  },
+  {
+    "id": 6,
+    "name": "Os Enamorados",
+    "keywords": "escolha, união, valores, conexão",
+    "description": "Escolha com o coração alinhado com quem você é."
+  },
+  {
+    "id": 7,
+    "name": "O Carro",
+    "keywords": "direção, foco, conquista, movimento",
+    "description": "Se você mantiver o foco, você chega lá."
+  },
+  {
+    "id": 8,
+    "name": "A Força",
+    "keywords": "coragem, calma, domínio, paciência",
+    "description": "Você vence isso com calma, não com força bruta."
+  },
+  {
+    "id": 9,
+    "name": "O Eremita",
+    "keywords": "introspecção, busca, sabedoria, solitude",
+    "description": "Se afaste um pouco e escute a si mesmo."
+  },
+  {
+    "id": 10,
+    "name": "A Roda da Fortuna",
+    "keywords": "ciclos, mudança, destino, movimento",
+    "description": "As coisas estão mudando, queira você ou não."
+  },
+  {
+    "id": 11,
+    "name": "A Justiça",
+    "keywords": "equilíbrio, verdade, consequência, responsabilidade",
+    "description": "Tudo está sendo equilibrado, cada ação conta."
+  },
+  {
+    "id": 12,
+    "name": "O Enforcado",
+    "keywords": "pausa, sacrifício, nova visão, rendição",
+    "description": "Pare de insistir e olhe isso de outro jeito."
+  },
+  {
+    "id": 13,
+    "name": "A Morte",
+    "keywords": "fim, transformação, renascimento, transição",
+    "description": "Isso precisa acabar pra algo novo começar."
+  },
+  {
+    "id": 14,
+    "name": "A Temperança",
+    "keywords": "equilíbrio, harmonia, ajuste, mistura",
+    "description": "Vá ajustando até tudo entrar no lugar."
+  },
+  {
+    "id": 15,
+    "name": "O Diabo",
+    "keywords": "apego, vício, ilusão, prisão",
+    "description": "Você está preso, mas pode sair se quiser."
+  },
+  {
+    "id": 16,
+    "name": "A Torre",
+    "keywords": "ruptura, choque, queda, revelação",
+    "description": "O que não era verdadeiro está caindo."
+  },
+  {
+    "id": 17,
+    "name": "A Estrela",
+    "keywords": "esperança, cura, fé, leveza",
+    "description": "Ainda existe esperança, mesmo depois de tudo."
+  },
+  {
+    "id": 18,
+    "name": "A Lua",
+    "keywords": "ilusão, medo, dúvida, inconsciente",
+    "description": "Nem tudo é claro, vá com cuidado."
+  },
+  {
+    "id": 19,
+    "name": "O Sol",
+    "keywords": "clareza, sucesso, alegria, vitalidade",
+    "description": "Agora tudo fica claro e mais leve."
+  },
+  {
+    "id": 20,
+    "name": "O Julgamento",
+    "keywords": "chamado, despertar, decisão, renascimento",
+    "description": "Você está sendo chamado pra mudar."
+  },
+  {
+    "id": 21,
+    "name": "O Mundo",
+    "keywords": "conclusão, realização, integração, plenitude",
+    "description": "Você fechou um ciclo importante."
+  },
+  {
+    "id": 22,
+    "name": "Ás de Espadas",
+    "keywords": "verdade, clareza, decisão, corte",
+    "description": "Agora você está vendo a verdade com clareza."
+  },
+  {
+    "id": 23,
+    "name": "2 de Espadas",
+    "keywords": "bloqueio, indecisão, negação, defesa",
+    "description": "Você está evitando tomar uma decisão."
+  },
+  {
+    "id": 24,
+    "name": "3 de Espadas",
+    "keywords": "dor, separação, tristeza, ruptura",
+    "description": "Isso te machucou, e precisa ser sentido."
+  },
+  {
+    "id": 25,
+    "name": "4 de Espadas",
+    "keywords": "descanso, pausa, recuperação, silêncio",
+    "description": "Você precisa parar e descansar a mente."
+  },
+  {
+    "id": 26,
+    "name": "5 de Espadas",
+    "keywords": "conflito, ego, tensão, derrota",
+    "description": "Alguém ganha, mas o clima fica ruim."
+  },
+  {
+    "id": 27,
+    "name": "6 de Espadas",
+    "keywords": "transição, mudança, afastamento, melhora",
+    "description": "Você está se afastando disso aos poucos."
+  },
+  {
+    "id": 28,
+    "name": "7 de Espadas",
+    "keywords": "engano, estratégia, mentira, segredo",
+    "description": "Tem algo sendo escondido ou feito pelas costas."
+  },
+  {
+    "id": 29,
+    "name": "8 de Espadas",
+    "keywords": "prisão mental, medo, limitação, bloqueio",
+    "description": "Você se sente preso, mas isso vem da sua mente."
+  },
+  {
+    "id": 30,
+    "name": "9 de Espadas",
+    "keywords": "ansiedade, culpa, medo, insônia",
+    "description": "Você está se preocupando mais do que deveria."
+  },
+  {
+    "id": 31,
+    "name": "10 de Espadas",
+    "keywords": "fim, dor, colapso, encerramento",
+    "description": "Isso terminou, mesmo que tenha sido doloroso."
+  },
+  {
+    "id": 32,
+    "name": "Pajem de Espadas",
+    "keywords": "observação, curiosidade, mente, alerta",
+    "description": "Observe mais antes de agir."
+  },
+  {
+    "id": 33,
+    "name": "Cavaleiro de Espadas",
+    "keywords": "impulso, pressa, confronto, ação",
+    "description": "Você está indo rápido demais, cuidado."
+  },
+  {
+    "id": 34,
+    "name": "Rainha de Espadas",
+    "keywords": "clareza, corte, verdade, independência",
+    "description": "Corte o que não faz mais sentido."
+  },
+  {
+    "id": 35,
+    "name": "Rei de Espadas",
+    "keywords": "lógica, estratégia, autoridade, razão",
+    "description": "Use a mente para tomar a melhor decisão."
+  },
+  {
+    "id": 36,
+    "name": "Ás de Paus",
+    "keywords": "início, energia, impulso, criação",
+    "description": "Uma nova energia surgiu, só falta você começar."
+  },
+  {
+    "id": 37,
+    "name": "2 de Paus",
+    "keywords": "planejamento, visão, decisão, futuro",
+    "description": "Você está olhando para frente e decidindo o próximo passo."
+  },
+  {
+    "id": 38,
+    "name": "3 de Paus",
+    "keywords": "progresso, expansão, espera, crescimento",
+    "description": "Você já começou e agora aguarda o que está vindo."
+  },
+  {
+    "id": 39,
+    "name": "4 de Paus",
+    "keywords": "celebração, base, estabilidade, conquista",
+    "description": "Você chegou em um momento de estabilidade, vale celebrar."
+  },
+  {
+    "id": 40,
+    "name": "5 de Paus",
+    "keywords": "conflito, disputa, competição, tensão",
+    "description": "Tem muita disputa ou confusão ao seu redor agora."
+  },
+  {
+    "id": 41,
+    "name": "6 de Paus",
+    "keywords": "vitória, reconhecimento, sucesso, destaque",
+    "description": "Você conseguiu e está sendo reconhecido por isso."
+  },
+  {
+    "id": 42,
+    "name": "7 de Paus",
+    "keywords": "defesa, resistência, posição, desafio",
+    "description": "Você precisa se manter firme e defender o que é seu."
+  },
+  {
+    "id": 43,
+    "name": "8 de Paus",
+    "keywords": "rapidez, movimento, avanço, comunicação",
+    "description": "As coisas vão acontecer rápido, fique preparado."
+  },
+  {
+    "id": 44,
+    "name": "9 de Paus",
+    "keywords": "resistência, cansaço, proteção, persistência",
+    "description": "Você está cansado, mas ainda precisa resistir."
+  },
+  {
+    "id": 45,
+    "name": "10 de Paus",
+    "keywords": "sobrecarga, peso, responsabilidade, esforço",
+    "description": "Você está carregando mais do que deveria."
+  },
+  {
+    "id": 46,
+    "name": "Pajem de Paus",
+    "keywords": "curiosidade, início, entusiasmo, novidade",
+    "description": "Algo novo despertou seu interesse, vale explorar."
+  },
+  {
+    "id": 47,
+    "name": "Cavaleiro de Paus",
+    "keywords": "ação, impulso, paixão, pressa",
+    "description": "Você quer agir rápido, mas cuidado com a impulsividade."
+  },
+  {
+    "id": 48,
+    "name": "Rainha de Paus",
+    "keywords": "confiança, carisma, autonomia, presença",
+    "description": "Confie em si mesmo e se mostre sem medo."
+  },
+  {
+    "id": 49,
+    "name": "Rei de Paus",
+    "keywords": "liderança, visão, autoridade, iniciativa",
+    "description": "Você precisa assumir a liderança da situação."
+  },
+  {
+    "id": 50,
+    "name": "Ás de Copas",
+    "keywords": "amor, emoção, início, conexão",
+    "description": "Um novo sentimento está nascendo dentro de você."
+  },
+  {
+    "id": 51,
+    "name": "2 de Copas",
+    "keywords": "união, parceria, troca, conexão",
+    "description": "Existe uma conexão verdadeira acontecendo aqui."
+  },
+  {
+    "id": 52,
+    "name": "3 de Copas",
+    "keywords": "celebração, amizade, alegria, grupo",
+    "description": "Esse é um momento de celebrar junto com outras pessoas."
+  },
+  {
+    "id": 53,
+    "name": "4 de Copas",
+    "keywords": "apatia, tédio, insatisfação, reflexão",
+    "description": "Você não está vendo o que está sendo oferecido."
+  },
+  {
+    "id": 54,
+    "name": "5 de Copas",
+    "keywords": "perda, tristeza, arrependimento, decepção",
+    "description": "Você está focado no que perdeu e esquecendo o que ficou."
+  },
+  {
+    "id": 55,
+    "name": "6 de Copas",
+    "keywords": "passado, nostalgia, memória, inocência",
+    "description": "Algo do passado ainda mexe com você."
+  },
+  {
+    "id": 56,
+    "name": "7 de Copas",
+    "keywords": "ilusão, escolhas, confusão, fantasia",
+    "description": "Nem todas as opções são reais ou boas."
+  },
+  {
+    "id": 57,
+    "name": "8 de Copas",
+    "keywords": "abandono, busca, desapego, mudança",
+    "description": "Você está deixando algo para trás em busca de algo maior."
+  },
+  {
+    "id": 58,
+    "name": "9 de Copas",
+    "keywords": "satisfação, prazer, desejo, realização",
+    "description": "Você conseguiu o que queria, agora é aproveitar."
+  },
+  {
+    "id": 59,
+    "name": "10 de Copas",
+    "keywords": "felicidade, família, harmonia, plenitude",
+    "description": "Aqui existe felicidade, conexão e paz."
+  },
+  {
+    "id": 60,
+    "name": "Pajem de Copas",
+    "keywords": "sensibilidade, mensagem, emoção, abertura",
+    "description": "Seu coração está tentando te mostrar algo novo."
+  },
+  {
+    "id": 61,
+    "name": "Cavaleiro de Copas",
+    "keywords": "romantismo, idealismo, movimento, emoção",
+    "description": "Você está seguindo o que sente, mesmo que pareça um sonho."
+  },
+  {
+    "id": 62,
+    "name": "Rainha de Copas",
+    "keywords": "empatia, intuição, cuidado, profundidade",
+    "description": "Sinta profundamente, mas sem se perder."
+  },
+  {
+    "id": 63,
+    "name": "Rei de Copas",
+    "keywords": "controle emocional, maturidade, equilíbrio, compaixão",
+    "description": "Você sente tudo, mas sabe se manter no controle."
+  },
+  {
+    "id": 64,
+    "name": "Ás de Ouros",
+    "keywords": "oportunidade, início, prosperidade, material",
+    "description": "Uma oportunidade concreta apareceu para você."
+  },
+  {
+    "id": 65,
+    "name": "2 de Ouros",
+    "keywords": "equilíbrio, adaptação, gestão, movimento",
+    "description": "Você está equilibrando várias coisas ao mesmo tempo."
+  },
+  {
+    "id": 66,
+    "name": "3 de Ouros",
+    "keywords": "construção, equipe, aprendizado, colaboração",
+    "description": "Você está construindo algo junto com outras pessoas."
+  },
+  {
+    "id": 67,
+    "name": "4 de Ouros",
+    "keywords": "apego, controle, segurança, retenção",
+    "description": "Você está segurando demais, com medo de perder."
+  },
+  {
+    "id": 68,
+    "name": "5 de Ouros",
+    "keywords": "escassez, dificuldade, perda, apoio",
+    "description": "Você está passando por uma fase difícil, mas não está sozinho."
+  },
+  {
+    "id": 69,
+    "name": "6 de Ouros",
+    "keywords": "troca, generosidade, ajuda, equilíbrio",
+    "description": "Existe troca aqui, alguém dá e alguém recebe."
+  },
+  {
+    "id": 70,
+    "name": "7 de Ouros",
+    "keywords": "espera, avaliação, crescimento, paciência",
+    "description": "Você já começa a ver os frutos do seu esforço."
+  },
+  {
+    "id": 71,
+    "name": "8 de Ouros",
+    "keywords": "trabalho, foco, prática, dedicação",
+    "description": "Você está se dedicando e melhorando no que faz."
+  },
+  {
+    "id": 72,
+    "name": "9 de Ouros",
+    "keywords": "independência, conforto, conquista, autonomia",
+    "description": "Você construiu algo que te dá independência."
+  },
+  {
+    "id": 73,
+    "name": "10 de Ouros",
+    "keywords": "estabilidade, família, riqueza, legado",
+    "description": "Você alcançou segurança e estabilidade a longo prazo."
+  },
+  {
+    "id": 74,
+    "name": "Pajem de Ouros",
+    "keywords": "início, estudo, oportunidade, potencial",
+    "description": "Você está começando algo que pode crescer muito."
+  },
+  {
+    "id": 75,
+    "name": "Cavaleiro de Ouros",
+    "keywords": "constância, esforço, disciplina, rotina",
+    "description": "Você vai chegar lá com paciência e consistência."
+  },
+  {
+    "id": 76,
+    "name": "Rainha de Ouros",
+    "keywords": "cuidado, praticidade, estabilidade, nutrição",
+    "description": "Você sabe cuidar do que sustenta sua vida."
+  },
+  {
+    "id": 77,
+    "name": "Rei de Ouros",
+    "keywords": "sucesso, segurança, liderança, prosperidade",
+    "description": "Você construiu algo sólido e pode confiar nisso."
   }
 ]

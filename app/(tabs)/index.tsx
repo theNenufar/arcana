@@ -4,7 +4,6 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>🔮 Arcana</Text>
-            <Text>Seu guia de tarot</Text>
         </View>
     );
 }
