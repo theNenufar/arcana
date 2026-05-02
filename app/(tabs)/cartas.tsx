@@ -8,6 +8,7 @@ import {
 
 import cartas from "../../src/data/cartas.json";
 import { imagensCartas } from "@/src/utils/images";
+import {SupermercadoOne_400Regular, useFonts} from "@expo-google-fonts/supermercado-one";
 
 export default function Cartas() {
 
@@ -25,7 +26,7 @@ export default function Cartas() {
                                 style={styles.image}
                             />
 
-                            <Text style={styles.nome}>
+                            <Text style={styles.name}>
                                 {carta.name}
                             </Text>
                         </View>
@@ -55,13 +56,16 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: "#FFF3E0"
+        backgroundColor: "#f5deff"
     },
 
     sectionTitle: {
         fontSize: 24,
         fontWeight: "bold",
-        margin: 15
+        fontFamily: "SupermercadoOne_400Regular",
+        textAlign: "center",
+        margin: 15,
+        color: "#280137"
     },
 
     grid: {
@@ -79,11 +83,16 @@ const styles = StyleSheet.create({
     image: {
         width: 130,
         height: 210,
-        borderRadius: 4
+        borderRadius: 8,
+        borderColor: "#280137",
+        borderWidth: 3
     },
 
-    nome: {
+    name: {
         marginTop: 5,
-        textAlign: "center"
+        textAlign: "center",
+        fontWeight: "bold",
+        fontFamily: "SupermercadoOne_400Regular",
+        color: "#280137"
     }
 });
