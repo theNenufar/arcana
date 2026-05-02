@@ -5,7 +5,7 @@ export default function Layout() {
       <Tabs screenOptions={{headerTitle: "Arcana"}}>
         <Tabs.Screen name="cartas" options={{ title: "Cartas" }} />
         <Tabs.Screen name="index" options={{ title: "Home" }} />
-        <Tabs.Screen name="tiragens" options={{ title: "Tiragens" }} />
+        <Tabs.Screen name="tiragem" options={{ title: "Tiragens" }} />
       </Tabs>
   );
 }
