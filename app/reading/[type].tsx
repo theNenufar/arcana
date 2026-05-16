@@ -11,6 +11,7 @@ import { router } from "expo-router";
 
 import TarotCard from "@/src/components/TarotCard";
 import { drawUniqueCards } from "@/src/utils/drawCards";
+import { saveReading } from "@/src/storage/readings";
 
 const spreads = {
 
@@ -74,6 +75,13 @@ export default function ReadingScreen() {
         setRevealedCards(
             Array(spread.size).fill(false)
         );
+
+        saveReading({
+            id: Date.now().toString(),
+            type: String(type),
+            cards,
+            createdAt: new Date().toISOString()
+        });
 
     }, [type]);
 
