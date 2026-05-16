@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 
-export default function Tiragem() {
+export default function Reading() {
     return (
         <View>
             <Text>Tela de Tiragem 🔮</Text>

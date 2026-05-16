@@ -17,18 +17,19 @@ export default function Layout() {
     return (
         <Tabs
             screenOptions={{
-                headerTitle: "Arcana",
-                headerStyle: { backgroundColor: "#280137" },
-                headerTintColor: "#f5deff",
-                headerTitleStyle: { fontWeight: 'bold', fontFamily: "SupermercadoOne_400Regular"},
-                headerTitleAlign: "center",
+                // headerTitle: "Arcana",
+                // headerStyle: { backgroundColor: "#280137" },
+                // headerTintColor: "#f5deff",
+                // headerTitleStyle: { fontWeight: 'bold', fontFamily: "SupermercadoOne_400Regular"},
+                // headerTitleAlign: "center",
+                headerShown: false,
                 tabBarStyle: { backgroundColor: '#280137' },
                 tabBarActiveBackgroundColor: "#4a0c63",
-                tabBarLabelStyle: {color: "#f5deff", fontWeight: "bold", fontFamily: "SupermercadoOne_400Regular"}
+                tabBarLabelStyle: {color: "#f5deff", fontFamily: "SupermercadoOne_400Regular"}
 
             }}
         >
-            <Tabs.Screen name="cartas" options={{
+            <Tabs.Screen name="cards" options={{
                 title: "Cartas",
                 tabBarIcon: ({size, focused}) => (
                     <Image source={focused ? require("@/assets/icons/cards.png") : require("@/assets/icons/cards.png")}
@@ -43,7 +44,7 @@ export default function Layout() {
                         style={{width: size, height: size}}/>
                 )
             }}/>
-            <Tabs.Screen name="tiragem" options={{
+            <Tabs.Screen name="reading" options={{
                 title: "Tiragens",
                 tabBarIcon: ({size, focused}) => (
                     <Image

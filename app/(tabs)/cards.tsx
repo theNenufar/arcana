@@ -3,32 +3,34 @@ import {
     Text,
     StyleSheet,
     Image,
-    ScrollView
+    ScrollView, TouchableOpacity
 } from "react-native";
 
-import cartas from "../../src/data/cartas.json";
+import cards from "../../src/data/cartas.json";
 import { imagensCartas } from "@/src/utils/images";
-import {SupermercadoOne_400Regular, useFonts} from "@expo-google-fonts/supermercado-one";
+import {router} from "expo-router";
 
-export default function Cartas() {
+export default function Cards() {
 
     const renderGroup = (title: string, group: string) => (
         <View>
             <Text style={styles.sectionTitle}>{title}</Text>
 
             <View style={styles.grid}>
-                {cartas
-                    .filter(carta => carta.group === group)
-                    .map(carta => (
-                        <View key={carta.id} style={styles.card}>
-                            <Image
-                                source={imagensCartas[carta.id]}
-                                style={styles.image}
-                            />
+                {cards
+                    .filter(card => card.group === group)
+                    .map(card => (
+                        <View key={card.id} style={styles.card}>
+                            <TouchableOpacity onPress={() => router.push({ pathname: "/cardInfo/[cardId]", params: { cardId: card.id } })}>
+                                <Image
+                                    source={imagensCartas[card.id]}
+                                    style={styles.image}
+                                />
 
-                            <Text style={styles.name}>
-                                {carta.name}
-                            </Text>
+                                <Text style={styles.name}>
+                                    {card.name}
+                                </Text>
+                            </TouchableOpacity>
                         </View>
                     ))}
             </View>
@@ -61,7 +63,6 @@ const styles = StyleSheet.create({
 
     sectionTitle: {
         fontSize: 24,
-        fontWeight: "bold",
         fontFamily: "SupermercadoOne_400Regular",
         textAlign: "center",
         margin: 15,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     grid: {
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
     },
 
     card: {
@@ -91,7 +92,6 @@ const styles = StyleSheet.create({
     name: {
         marginTop: 5,
         textAlign: "center",
-        fontWeight: "bold",
         fontFamily: "SupermercadoOne_400Regular",
         color: "#280137"
     }
