@@ -6,18 +6,23 @@ import {
 } from "react-native";
 
 import { useLocalSearchParams } from "expo-router";
+import { useEffect, useState } from "react";
+import { router } from "expo-router";
 
 import TarotCard from "@/src/components/TarotCard";
+import { drawUniqueCards } from "@/src/utils/drawCards";
 
 const spreads = {
 
     daily: {
         title: "Carta do Dia",
+        size: 1,
         positions: ["Sua Carta"]
     },
 
     ppf: {
         title: "Passado • Presente • Futuro",
+        size: 3,
         positions: [
             "Passado",
             "Presente",
@@ -27,6 +32,7 @@ const spreads = {
 
     celtic: {
         title: "Cruz Celta",
+        size: 10,
         positions: [
             "Presente",
             "Desafio",
@@ -50,6 +56,27 @@ export default function ReadingScreen() {
     const spread =
         spreads[type as keyof typeof spreads];
 
+    const [drawnCards, setDrawnCards] =
+        useState<number[]>([]);
+
+    const [revealedCards, setRevealedCards] =
+        useState<boolean[]>([]);
+
+    useEffect(() => {
+
+        if (!spread) return;
+
+        const cards =
+            drawUniqueCards(spread.size);
+
+        setDrawnCards(cards);
+
+        setRevealedCards(
+            Array(spread.size).fill(false)
+        );
+
+    }, [type]);
+
     if (!spread) {
         return (
             <View style={styles.container}>
@@ -58,12 +85,37 @@ export default function ReadingScreen() {
         );
     }
 
+    const handleCardPress = (index: number) => {
+
+        if (!revealedCards[index]) {
+
+            const updated =
+                [...revealedCards];
+
+            updated[index] = true;
+
+            setRevealedCards(updated);
+
+            return;
+        }
+
+        router.push({
+            pathname: "/cardInfo/[cardId]",
+            params: {
+                cardId: drawnCards[index]
+            }
+        });
+    };
+
     const renderDaily = () => (
         <View style={styles.centered}>
             <TarotCard
-                revealed={false}
+                cardId={drawnCards[0]}
+                revealed={revealedCards[0]}
                 label={spread.positions[0]}
-                onPress={() => {}}
+                onPress={() => handleCardPress(0)}
+                width={280}
+                height={500}
             />
         </View>
     );
@@ -73,9 +125,12 @@ export default function ReadingScreen() {
             {spread.positions.map((position, index) => (
                 <TarotCard
                     key={index}
-                    revealed={false}
+                    cardId={drawnCards[index]}
+                    revealed={revealedCards[index]}
                     label={position}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(index)}
+                    width={110}
+                    height={196}
                 />
             ))}
         </View>
@@ -86,81 +141,91 @@ export default function ReadingScreen() {
 
             <View style={styles.row}>
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[4]}
+                    revealed={revealedCards[4]}
                     label={spread.positions[4]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(4)}
                 />
             </View>
 
             <View style={styles.crossRow}>
 
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[3]}
+                    revealed={revealedCards[3]}
                     label={spread.positions[3]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(3)}
                 />
 
                 <View style={styles.crossCenter}>
 
                     <TarotCard
-                        revealed={false}
+                        cardId={drawnCards[0]}
+                        revealed={revealedCards[0]}
                         label={spread.positions[0]}
-                        onPress={() => {}}
+                        onPress={() => handleCardPress(0)}
                     />
 
                     <View style={styles.crossingCard}>
                         <TarotCard
-                            revealed={false}
+                            cardId={drawnCards[1]}
+                            revealed={revealedCards[1]}
                             label={spread.positions[1]}
                             rotated
                             hideLabel
-                            onPress={() => {}}
+                            onPress={() => handleCardPress(1)}
                         />
                     </View>
 
                 </View>
 
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[5]}
+                    revealed={revealedCards[5]}
                     label={spread.positions[5]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(5)}
                 />
 
             </View>
 
             <View style={styles.centered}>
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[2]}
+                    revealed={revealedCards[2]}
                     label={spread.positions[2]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(2)}
                 />
             </View>
 
             <View style={styles.row}>
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[6]}
+                    revealed={revealedCards[6]}
                     label={spread.positions[6]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(6)}
                 />
 
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[7]}
+                    revealed={revealedCards[7]}
                     label={spread.positions[7]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(7)}
                 />
             </View>
 
             <View style={styles.row}>
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[8]}
+                    revealed={revealedCards[8]}
                     label={spread.positions[8]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(8)}
                 />
 
                 <TarotCard
-                    revealed={false}
+                    cardId={drawnCards[9]}
+                    revealed={revealedCards[9]}
                     label={spread.positions[9]}
-                    onPress={() => {}}
+                    onPress={() => handleCardPress(9)}
                 />
             </View>
 
@@ -192,7 +257,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 34,
+        fontSize: 30,
         textAlign: "center",
         marginVertical: 20,
         color: "#280137",
@@ -200,12 +265,12 @@ const styles = StyleSheet.create({
     },
 
     centered: {
-        alignItems: "center"
+        alignItems: "center",
     },
 
     row: {
         flexDirection: "row",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
         width: "100%"
     },
 
@@ -226,15 +291,15 @@ const styles = StyleSheet.create({
     },
 
     crossCenter: {
-        width: 140,
-        height: 220,
+        width: 150,
+        height: 211,
         justifyContent: "center",
         alignItems: "center"
     },
 
     crossingCard: {
         position: "absolute",
-        bottom: 20,
+        bottom: 5,
         pointerEvents: "box-none"
     },
 

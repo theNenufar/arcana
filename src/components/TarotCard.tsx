@@ -3,8 +3,10 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    Image
+    Image,
+    Animated
 } from "react-native";
+import { useEffect, useRef, useState } from "react";
 
 import { imagensCartas } from "@/src/utils/images";
 
@@ -15,6 +17,8 @@ interface TarotCardProps {
     onPress: () => void;
     rotated?: boolean;
     hideLabel?: boolean;
+    width?: number;
+    height?: number;
 }
 
 export default function TarotCard({
@@ -23,25 +27,84 @@ export default function TarotCard({
                                       label,
                                       onPress,
                                       rotated = false,
-                                      hideLabel = false
+                                      hideLabel = false,
+                                      width = 90,
+                                      height = 161
                                   }: TarotCardProps) {
+
+    const [showFront, setShowFront] = useState(revealed);
+
+    const flipAnim = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+
+        if (revealed) {
+
+            Animated.sequence([
+
+                Animated.timing(flipAnim, {
+                    toValue: 1,
+                    duration: 150,
+                    useNativeDriver: true
+                }),
+
+                Animated.timing(flipAnim, {
+                    toValue: 2,
+                    duration: 150,
+                    useNativeDriver: true
+                })
+
+            ]).start();
+
+            setTimeout(() => {
+                setShowFront(true);
+            }, 150);
+
+        }
+
+    }, [revealed]);
+
+    const scale = flipAnim.interpolate({
+        inputRange: [0, 1, 2],
+        outputRange: [1, 0, 1]
+    });
 
     return (
         <View style={styles.container}>
 
             <TouchableOpacity onPress={onPress}>
 
-                <Image
-                    source={
-                        revealed && cardId !== undefined
-                            ? imagensCartas[cardId]
-                            : require("@/assets/cards/backside.jpg")
-                    }
-                    style={[
-                        styles.image,
-                        rotated && styles.rotated
-                    ]}
-                />
+                <Animated.View
+                    style={{
+                        transform: [
+
+                            rotated
+                                ? { scaleY: scale }
+                                : { scaleX: scale },
+
+                            ...(rotated
+                                ? [{ rotate: "90deg" }]
+                                : [])
+                        ]
+                    }}
+                >
+
+                    <Image
+                        source={
+                            showFront && cardId !== undefined
+                                ? imagensCartas[cardId]
+                                : require("@/assets/cards/backside.jpg")
+                        }
+                        style={[
+                            styles.image,
+                            {
+                                width,
+                                height
+                            }
+                        ]}
+                    />
+
+                </Animated.View>
 
             </TouchableOpacity>
 
@@ -63,8 +126,8 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: 85,
-        height: 135,
+        width: 90,
+        height: 140,
         borderRadius: 8,
         borderColor: "#280137",
         borderWidth: 3
