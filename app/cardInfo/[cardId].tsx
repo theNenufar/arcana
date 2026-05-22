@@ -22,13 +22,13 @@ export default function Home() {
                 style={styles.image}
             />
 
-            <Text style={styles.keywords}>
-                <Text style={{ }}>Palavras-Chave: </Text>
-                <Text>{card.keywords}</Text>
+            <Text>
+                <Text style={styles.keywords}>Palavras-Chave: </Text>
+                <Text style={styles.description}>{card.keywords}</Text>
             </Text>
-            <Text style={styles.keywords}>
-                <Text style={{ }}>Descrição: </Text>
-                <Text>{card.description}</Text>
+            <Text>
+                <Text style={styles.keywords}>Descrição: </Text>
+                <Text style={styles.description}>{card.description}</Text>
             </Text>
         </ScrollView>
     );
@@ -67,6 +67,14 @@ const styles = StyleSheet.create({
         textAlign: "left",
         fontSize: 24,
         fontFamily: "SupermercadoOne_400Regular",
+        color: "#280137"
+    },
+
+    description: {
+        marginHorizontal: "10%",
+        marginTop: 24,
+        textAlign: "left",
+        fontSize: 24,
         color: "#280137"
     }
 });
