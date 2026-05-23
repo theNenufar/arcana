@@ -22,11 +22,11 @@ export default function Home() {
                 style={styles.image}
             />
 
-            <Text>
+            <Text style={styles.subtitle}>
                 <Text style={styles.keywords}>Palavras-Chave: </Text>
                 <Text style={styles.description}>{card.keywords}</Text>
             </Text>
-            <Text>
+            <Text style={styles.subtitle}>
                 <Text style={styles.keywords}>Descrição: </Text>
                 <Text style={styles.description}>{card.description}</Text>
             </Text>
@@ -67,6 +67,14 @@ const styles = StyleSheet.create({
         textAlign: "left",
         fontSize: 24,
         fontFamily: "SupermercadoOne_400Regular",
+        color: "#280137"
+    },
+
+    subtitle: {
+        marginHorizontal: "10%",
+        marginTop: 24,
+        textAlign: "left",
+        fontSize: 24,
         color: "#280137"
     },
 
