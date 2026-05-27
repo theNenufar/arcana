@@ -1,6 +1,6 @@
 import {
-    useFonts,
-    SupermercadoOne_400Regular
+    SupermercadoOne_400Regular,
+    useFonts
 } from '@expo-google-fonts/supermercado-one';
 
 import { Stack } from "expo-router";
@@ -9,7 +9,9 @@ import { Asset } from "expo-asset";
 
 import { imagensCartas } from "@/src/utils/images";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import SplashScreen from "@/src/components/SplashScreen";
 
 export default function RootLayout() {
 
@@ -17,27 +19,35 @@ export default function RootLayout() {
         SupermercadoOne_400Regular,
     });
 
+    const [loading, setLoading] =
+        useState(true);
+
     useEffect(() => {
 
-        async function preloadImages() {
+        async function initializeApp() {
 
             const images =
                 Object.values(imagensCartas);
 
             const cacheImages =
                 images.map((image) =>
-                    Asset.fromModule(image).downloadAsync()
+                    Asset.fromModule(image)
+                        .downloadAsync()
                 );
 
             await Promise.all(cacheImages);
+
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
         }
 
-        preloadImages();
+        initializeApp();
 
     }, []);
 
-    if (!fontsLoaded) {
-        return null;
+    if (!fontsLoaded || loading) {
+        return <SplashScreen />;
     }
 
     return (
