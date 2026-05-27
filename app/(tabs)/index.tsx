@@ -56,7 +56,7 @@ export default function Home() {
 
     return (
 
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
 
             <Text style={styles.title}>
                 Bem-vindo à Arcana
@@ -124,10 +124,14 @@ const styles = StyleSheet.create({
         padding: 20
     },
 
+    content: {
+        paddingBottom: 40
+    },
+
     title: {
         fontSize: 34,
         textAlign: "center",
-        marginTop: 30,
+        marginTop: 10,
         marginBottom: 20,
         color: "#280137",
         fontFamily: "SupermercadoOne_400Regular"
