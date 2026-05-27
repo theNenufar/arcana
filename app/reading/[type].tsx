@@ -5,9 +5,8 @@ import {
     ScrollView
 } from "react-native";
 
-import { useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
-import { router } from "expo-router";
+import { useLocalSearchParams , router } from "expo-router";
+import { useEffect, useState, useRef } from "react";
 
 import TarotCard from "@/src/components/TarotCard";
 import { drawUniqueCards } from "@/src/utils/drawCards";
@@ -63,6 +62,9 @@ export default function ReadingScreen() {
     const [revealedCards, setRevealedCards] =
         useState<boolean[]>([]);
 
+    const hasSaved =
+        useRef(false);
+
     useEffect(() => {
 
         if (!spread) return;
@@ -99,6 +101,18 @@ export default function ReadingScreen() {
 
             const updated =
                 [...revealedCards];
+
+            if (!hasSaved.current) {
+
+                saveReading({
+                    id: Date.now().toString(),
+                    type: String(type),
+                    cards: drawnCards,
+                    createdAt: new Date().toISOString()
+                });
+
+                hasSaved.current = true;
+            }
 
             updated[index] = true;
 
