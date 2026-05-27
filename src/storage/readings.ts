@@ -63,3 +63,31 @@ export async function getReadings():
         return [];
     }
 }
+
+export async function getReadingById(
+    id: string
+): Promise<SavedReading | null> {
+
+    try {
+
+        const readings =
+            await getReadings();
+
+        const reading =
+            readings.find(
+                (reading) =>
+                    reading.id === id
+            );
+
+        return reading || null;
+
+    } catch (error) {
+
+        console.log(
+            "Erro ao buscar tiragem:",
+            error
+        );
+
+        return null;
+    }
+}
