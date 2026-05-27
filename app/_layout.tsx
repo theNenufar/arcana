@@ -46,7 +46,11 @@ export default function RootLayout() {
 
     }, []);
 
-    if (!fontsLoaded || loading) {
+    if (!fontsLoaded) {
+        return null;
+    }
+
+    if (loading) {
         return <SplashScreen />;
     }
 

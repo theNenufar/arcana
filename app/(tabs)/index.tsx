@@ -1,5 +1,4 @@
 import {
-    View,
     Text,
     StyleSheet,
     TouchableOpacity,
@@ -8,7 +7,7 @@ import {
 
 import { useFocusEffect , router } from "expo-router";
 
-import { useCallback , useEffect, useState } from "react";
+import { useCallback , useState } from "react";
 
 
 
@@ -131,8 +130,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginBottom: 20,
         color: "#280137",
-        fontFamily:
-            "SupermercadoOne_400Regular"
+        fontFamily: "SupermercadoOne_400Regular"
     },
 
     description: {
@@ -140,7 +138,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#280137",
         lineHeight: 28,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        fontFamily: "SupermercadoOne_400Regular"
     },
 
     divider: {
@@ -155,8 +154,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: "#280137",
         textAlign: "center",
-        fontFamily:
-            "SupermercadoOne_400Regular"
+        fontFamily: "SupermercadoOne_400Regular"
     },
 
     card: {
@@ -172,8 +170,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: "#f5deff",
         marginBottom: 8,
-        fontFamily:
-            "SupermercadoOne_400Regular"
+        fontFamily: "SupermercadoOne_400Regular"
     },
 
     cardDate: {
