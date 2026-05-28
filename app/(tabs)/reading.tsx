@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
 
     cardDescription: {
         fontSize: 16,
-        color: "#e8cfff"
+        color: "#e8cfff",
+        fontFamily: "SupermercadoOne_400Regular"
     }
 });

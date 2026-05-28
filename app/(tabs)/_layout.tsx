@@ -17,11 +17,6 @@ export default function Layout() {
     return (
         <Tabs
             screenOptions={{
-                // headerTitle: "Arcana",
-                // headerStyle: { backgroundColor: "#280137" },
-                // headerTintColor: "#f5deff",
-                // headerTitleStyle: { fontWeight: 'bold', fontFamily: "SupermercadoOne_400Regular"},
-                // headerTitleAlign: "center",
                 headerShown: false,
                 tabBarStyle: { backgroundColor: '#280137' },
                 tabBarActiveBackgroundColor: "#4a0c63",
