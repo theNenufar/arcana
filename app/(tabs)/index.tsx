@@ -186,7 +186,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#280137",
         fontSize: 18,
-        marginTop: 20
+        marginTop: 20,
+        fontFamily: "SupermercadoOne_400Regular"
     }
 
 });

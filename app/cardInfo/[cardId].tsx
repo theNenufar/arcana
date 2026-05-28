@@ -12,7 +12,7 @@ export default function Home() {
         return <Text>Card not found!</Text>;
     }
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
             <Text style={styles.name}>
                 {card.name}
             </Text>
@@ -39,6 +39,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#f5deff"
     },
+
+    content: {
+        paddingBottom: 40
+    },
+
     title: {
         fontSize: 28,
     },
@@ -82,7 +87,8 @@ const styles = StyleSheet.create({
         marginHorizontal: "10%",
         marginTop: 24,
         textAlign: "left",
-        fontSize: 24,
+        fontSize: 20,
+        fontFamily: "SupermercadoOne_400Regular",
         color: "#280137"
     }
 });

@@ -78,13 +78,6 @@ export default function ReadingScreen() {
             Array(spread.size).fill(false)
         );
 
-        saveReading({
-            id: Date.now().toString(),
-            type: String(type),
-            cards,
-            createdAt: new Date().toISOString()
-        });
-
     }, [type]);
 
     if (!spread) {
